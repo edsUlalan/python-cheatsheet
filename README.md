@@ -1,3 +1,3 @@
 # python-cheatsheet
 
-### Modular approach of basic coding in Python
+### Basic coding in Python (modular approach)
