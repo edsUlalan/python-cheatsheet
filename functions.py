@@ -38,6 +38,29 @@ def add_numbers(x, y):
 sum = add_numbers(3, 5)
 print(sum)
 
+# returning a dictionary
+def build_person(first, last):
+    """Return a dictionary of information about a person."""
+    person = {'first': first, 'last': last}
+    return person
+
+musician = build_person('jimi', 'hendrix')
+print(musician)
+
+# returning a dictionary with optional values
+def build_person(first, last, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first, 'last':last}
+    if age:
+        person['age'] = age
+    return person
+
+musician = build_person('jimi', 'hendrix', 27)
+print(musician)
+
+musician = build_person('janis', 'joplin')
+print(musician)
+
 # using positional arguments
 def describe_pet(animal, name):
     """Display information about a pet."""
