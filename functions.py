@@ -73,3 +73,59 @@ describe_pet('dog', 'willie')
 # using keyword arguments
 describe_pet(animal='monkey', name="kiwew")
 describe_pet(name='chow', animal='cat')
+
+# allowing a function to modify a list
+def print_models(unprinted, printed):
+    """3d print a set of models."""
+    while unprinted:
+        current_model = unprinted.pop()
+        print(f"Printing {current_model}")
+        printed.append(current_model)
+
+unprinted = ['phone case', 'pendant', 'ring']
+printed = []
+print_models(unprinted, printed)
+
+print(f"\nUnprinted: {unprinted}")
+print(f"Printed: {printed}")
+
+# preventing a function from modifying a list
+def print_models(unprinted, printed):
+    """3d print a set of models."""
+    while unprinted:
+        current_model = unprinted.pop()
+        print(f"Printing {current_model}")
+        printed.append(current_model)
+
+original = ['phone case', 'pendant', 'ring']
+printed = []
+
+print_models(original[:], printed)
+print(f"\nOriginal: {original}")
+print(f"Printed: {printed}")
+
+# collecting an arbitary number of arguments
+def make_pizza(size, *toppings):
+    """Make a pizza."""
+    print(f"\Making a {size} pizza.")
+    print("Toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza('small', 'pepperoni')
+make_pizza('large', 'bacon bits', 'pineapple')
+make_pizza('medium', 'mushrooms', 'peppers', 'onions', 'extra cheese')
+
+#collecting an arbritrary number of keyword arguments
+def build_profile(first, last, **user_info):
+    """Build a dictionary for a user."""
+    user_info['first'] = first
+    user_info['last'] = last
+
+    return user_info
+
+user_0 = build_profile('albert', 'einstein', location='princeton')
+user_1 = build_profile('marie', 'curie', location='paris', field='chemistry')
+
+print(user_0)
+print(user_1)
