@@ -1,6 +1,7 @@
 import unittest
 from full_names import get_full_name
 
+# class NamesTestCase inherits from unittest
 class NamesTestCase(unittest.TestCase):
     """Tests for names.py"""
 
