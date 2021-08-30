@@ -19,3 +19,20 @@ class Car:
     def drive(self):
         """Simulate driving."""
         print("The car is moving.")
+
+# creating an object from a class
+my_car = Car('audi', 'a4', 2016)
+
+# accessing attribute values
+print(my_car.make)
+print(my_car.model)
+print(my_car.year)
+
+# calling methods
+my_car.fill_tank()
+my_car.drive()
+
+# creating multiple objects
+my_car = Car('audi', 'a4', 2019)
+my_old_car = Car('subaru', 'outback', 2015)
+my_truck = Car('toyota', 'tacoma', 2012)
