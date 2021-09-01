@@ -36,3 +36,24 @@ my_car.drive()
 my_car = Car('audi', 'a4', 2019)
 my_old_car = Car('subaru', 'outback', 2015)
 my_truck = Car('toyota', 'tacoma', 2012)
+
+# modifying an attribute directly
+my_new_car = Car('audi', 'a4', 2019)
+my_new_car.fuel_level = 5
+
+# writing a method to update an attribute's value
+def update_fuel_level(self, new_level):
+    """Update the fuel level."""
+    if new_level <= self.fuel_capacity:
+        self.fuel_level = new_level
+    else:
+        print("The tank can't hold that much!")
+
+# writing a method to increment an attribute's value
+def add_fuel(self, amount):
+    """Add fuel to the tank."""
+    if self.fuel_level + amount <= self.fuel_capacity:
+        self.fuel_level += amount
+        print("Added fuel.")
+    else:
+        print("The tank won't hold that much.")
