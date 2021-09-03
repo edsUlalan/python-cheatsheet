@@ -45,3 +45,27 @@ my_ecar = ElectricCar('tesla', 'model s', 2019)
 
 my_ecar.charge()
 my_ecar.drive()
+
+# overriding parent methods
+class ElectricCar(Car):
+    --snip--
+    def fill_tank(self):
+        """Display an erro message."""
+        print("This car has no fuel tank!")
+
+# instances as attributes
+class Battery:
+    """A battery for an electric car."""
+
+    def __init__(self, size=75):
+        """Initialize battery attributes."""
+        # Capacity in kWh, charge level in %.
+        self.size = size
+        self.charge_level = 0
+
+    def get_range(self):
+        """Return the battery's range."""
+        if self.size == 75:
+            return 260
+        elif self.size == 100:
+            return 315
