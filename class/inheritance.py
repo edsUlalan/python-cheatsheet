@@ -69,3 +69,25 @@ class Battery:
             return 260
         elif self.size == 100:
             return 315
+
+class ElectricCar(Car):
+    --snip--
+
+    def __init__(self, make, model, year):
+        """Initialize an electric car."""
+        super().__init__(make, model, year)
+
+        # Attribute specific to electric cars.
+        self.battery = Battery()
+
+    def charge(self):
+        """Fully charge the vehicle."""
+        self.battery.charge_level = 100
+        print("The vehicle is fully charged.")
+
+# using the instance
+my_ecar = ElectricCar('tesla', 'model x', 2019)
+
+my_ecar.charge()
+print(my_ecar.battery.get_range())
+my_ecar.drive()
