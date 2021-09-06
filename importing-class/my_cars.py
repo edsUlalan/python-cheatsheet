@@ -27,3 +27,26 @@ my_tesla.drive()
 # from car import *
 #
 # my_beetle = Car('volkswagen', 'beetle', 2016)
+
+# Storing objects in a list
+
+# make lists to hold a fleet of cars.
+gas_fleet = []
+electric_fleet = []
+
+# make 500 gas cars and 250 electric cars.
+for _ in range(500):
+    car = Car('ford', 'escape', 2019)
+    gas_fleet.append(car)
+for _ in range(250):
+    ecar = ElectricCar('nissan', 'leaf', 2019)
+    electric_fleet.append(ecar)
+
+# Fill the gas cars, and charge electric cars.
+for car in gas_fleet:
+    car.fill_tank()
+for ecar in electric_fleet:
+    ecar.charge()
+
+print(f"Gas cars: {len(gas_fleet)}")
+print(f"Electric cars: {len(electric_fleet)}")
